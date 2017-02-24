@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-<center>
-<canvas id="canvas" width="600" height="400" style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML5 canvas tag.</canvas>
-</center>
-<script>
-
 var dirx = 1;
 var diry = 0;
 document.addEventListener('keydown', function(event) {
@@ -74,7 +65,3 @@ function draw(){
   snakeArr.unshift({x:hx+dirx,y:hy+diry});
 }
 setInterval(draw,60);
-
-</script>
-</body>
-</html>
