@@ -37,6 +37,8 @@ var snakeArr = [];
 var score = 0;
 var foodx = Math.floor((Math.random() * ((cw/bs)-1)) + 1);
 var foody = Math.floor((Math.random() * ((ch/bs)-1)) + 1);
+var foodColor = "#FFFFFF"
+var snakeColor = "#FFFFFF"
 
 for(i = 5; i>=0; i--){
   snakeArr.push({x:i,y:0});
@@ -47,18 +49,20 @@ function draw(){
   hy = snakeArr[0].y;
   ctx.font = "20px serif";
   ctx.fillText("Score: "+score, 5, ch-5);
+  ctx.fillStyle = snakeColor;
   for(i=0; i<snakeArr.length; i++){
-    ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6) // Random color, yaay
     ctx.fillRect(snakeArr[i].x*bs, snakeArr[i].y*bs, bs,bs);
   }
   
-  ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6)
+  ctx.fillStyle = foodColor;
   ctx.fillRect(foodx*bs, foody*bs, bs, bs);
   for(i=1; i<snakeArr.length; i++){
     if(hx==snakeArr[i].x&&hy==snakeArr[i].y||hx==-1||hx==cw/bs||hy==-1||hy==ch/bs)window.location.reload(false);
-    if(hx==foodx&&hy==foody){
+    if(hx==foodx&&hy==foody) {
+      snakeColor = foodColor;
       foodx = Math.floor((Math.random() * ((cw/bs)-1)) + 1);
       foody = Math.floor((Math.random() * ((ch/bs)-1)) + 1);
+      foodColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
       snakeArr.push({x:hx+dirx,y:hy+diry});
       score++;
     }
