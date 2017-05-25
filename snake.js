@@ -47,8 +47,8 @@ function draw(){
   hy = snakeArr[0].y;
   ctx.font = "20px serif";
   ctx.fillText("Score: "+score, 5, ch-5);
-  ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6) // Random color, yaay
   for(i=0; i<snakeArr.length; i++){
+    ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6) // Random color, yaay
     ctx.fillRect(snakeArr[i].x*bs, snakeArr[i].y*bs, bs,bs);
   }
   
