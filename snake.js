@@ -37,8 +37,8 @@ var snakeArr = [];
 var score = 0;
 var foodx = Math.floor((Math.random() * ((cw/bs)-1)) + 1);
 var foody = Math.floor((Math.random() * ((ch/bs)-1)) + 1);
-var foodColor = "#FFFFFF"
-var snakeColor = "#FFFFFF"
+var foodColor = "#000000"
+var snakeColor = "#000000"
 
 for(i = 5; i>=0; i--){
   snakeArr.push({x:i,y:0});
