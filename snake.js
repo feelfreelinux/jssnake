@@ -47,10 +47,12 @@ function draw(){
   hy = snakeArr[0].y;
   ctx.font = "20px serif";
   ctx.fillText("Score: "+score, 5, ch-5);
+  ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6) // Random color, yaay
   for(i=0; i<snakeArr.length; i++){
     ctx.fillRect(snakeArr[i].x*bs, snakeArr[i].y*bs, bs,bs);
   }
-
+  
+  ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6)
   ctx.fillRect(foodx*bs, foody*bs, bs, bs);
   for(i=1; i<snakeArr.length; i++){
     if(hx==snakeArr[i].x&&hy==snakeArr[i].y||hx==-1||hx==cw/bs||hy==-1||hy==ch/bs)window.location.reload(false);
