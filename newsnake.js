@@ -1,7 +1,7 @@
 var dirx = 1;
 var diry = 0;
-var rgx = 1;
-var rgy = 0;
+var rygx = 1;
+var rygy = 0;
 document.addEventListener('keydown', function(event) {
   switch(event.keyCode){
     case 37: //left
@@ -99,6 +99,18 @@ function draw(){
       foody = Math.floor((Math.random() * ((ch/bs)-1)) + 1);
       foodColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
       snakeArr.push({x:hx+dirx,y:hy+diry});
+      score++;
+    }
+  }
+  
+     for(i=1; i<snake2Arr.length; i++){
+if(rhx==snake2Arr[i].x&&rhy==snake2Arr[i].y||rhx==-1||rhx==cw/bs||rhy==-1||rhy==ch/bs)window.location.reload(false);
+    if(rhx==foodx&&rhy==foody) {
+      snakeColor = foodColor;
+      foodx = Math.floor((Math.random() * ((cw/bs)-1)) + 1);
+      foody = Math.floor((Math.random() * ((ch/bs)-1)) + 1);
+      foodColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+      snakeArr.push({x:rhx+rygx,y:rhy+rygy});
       score++;
     }
   }
