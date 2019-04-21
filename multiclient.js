@@ -1,4 +1,4 @@
-var snekSocket = new WebSocket("ws://155.138.234.94:4414");
+var snekSocket = new WebSocket("wss://155.138.234.94:4414");
 
 var sneks = [
   {
